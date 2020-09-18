@@ -3,11 +3,14 @@
 #include<conio.h>
 #include<string.h>
 #define t 5
+size_t i;
 void capturar_enteros();
 void mostrar_cadena(int, char *);
 int main()
 {
+    int n;
     char opc;
+    char cad[50];
     do
     {
         printf("Elige una opcion...\n\n");
@@ -25,10 +28,21 @@ int main()
             capturar_enteros();
         break;
         case '2':
+            printf("Ingresa la cadena que quieres imprimir: ");
+            fflush(stdin);
+            fgets(cad, sizeof(cad), stdin);
+            printf("\nCuantas veces quieres imprimirla?...\n");
+            scanf("%i", &n);
+            strupr(cad);
+            mostrar_cadena(n, cad);
         break;
         case '3':
         break;
         case '4':
+        break;
+        default:
+            if(opc != '0')
+                printf("\n\nLa opcion no es valida...\n\n");
         break;
         }
         system("pause");
@@ -38,7 +52,6 @@ int main()
 }
 void capturar_enteros()
 {
-    size_t i;
     int arreglo[t], sum;
     float prom;
     sum = 0;
@@ -55,4 +68,9 @@ void capturar_enteros()
         printf("%i ", arreglo[i]);
     printf("\nSuma: %i", sum);
     printf("\nPromedio: %.2f\n\n", prom);
+}
+void mostrar_cadena(int n, char cad[])
+{
+    for(i=0; i<n; i++)
+        printf("%s\n", cad);
 }
