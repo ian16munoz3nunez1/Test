@@ -1,7 +1,11 @@
+/*NOMBRE DEL PROGRAMADOR: IAN EMMANUEL MUÑOZ NUÑEZ
+NOMBRE DEL PROGRAMA: TEST DE DIAGNOSTICO .C
+FECHA: 18 DE SEPTIEMBRE DE 2020*/
 #include<stdio.h>
 #include<stdlib.h>
 #include<conio.h>
 #include<string.h>
+#include "personaje.h"
 #define t 5
 size_t i;
 void capturar_enteros();
@@ -37,8 +41,10 @@ int main()
             mostrar_cadena(n, cad);
         break;
         case '3':
+            capturar_personaje();
         break;
         case '4':
+            mostrar_personaje();
         break;
         default:
             if(opc != '0')
